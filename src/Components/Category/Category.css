@@ -1,0 +1,27 @@
+.menu-item {
+  text-align: center;
+  margin: 30px;
+}
+
+.menu-list-items {
+  margin: 2rem 20rem 0 20rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(221, 214, 214, 0.99);
+}
+
+.menu-btn button {
+  color: white;
+  background-color: green;
+  width: 8rem;
+  border: 1px solid green;
+  font-weight: bold;
+}
+
+.menu-btn button:hover {
+  color: green;
+  background-color: white;
+  border: 1px solid green;
+  cursor: pointer;
+  font-weight: bold;
+}

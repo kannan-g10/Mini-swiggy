@@ -1,0 +1,52 @@
+.Header {
+    display: flex;
+    margin: 20px;
+    background-color: whitesmoke;
+    justify-content: space-around;
+    align-items: center;
+}
+
+img {
+    width: 80px;
+    height: 60px;
+    margin-right: 50px;
+}
+
+h1 {
+    padding: 10px;
+}
+
+ul {
+    display: flex;
+    margin-left: 700px;
+}
+
+ul li {
+    list-style: none;
+    padding: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    justify-content: space-between;
+    /* margin: auto; */
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul li:hover {
+    background-color: rgb(28, 26, 26);
+    color: whitesmoke;
+}
+
+button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+button:hover{
+    color: white;
+    background-color: rgb(236, 105, 105);
+}

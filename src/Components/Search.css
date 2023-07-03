@@ -1,0 +1,19 @@
+.searchbar {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.search-food {
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid rgb(53, 53, 53);
+    margin-right: 10px;
+}
+
+.submit {
+    padding: 10px;
+    background-color: rgb(247, 233, 217);
+    cursor: pointer;
+    border-radius: 30px;
+}
