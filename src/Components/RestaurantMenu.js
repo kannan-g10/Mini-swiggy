@@ -6,16 +6,17 @@ import { HiOutlineCurrencyRupee } from "react-icons/hi";
 import { IMG_ID } from "./Constants";
 import "./RestaurantMenu.css";
 import Category from "./Category/Category";
+import ShimmerDetail from "./ShimmerDetail";
 
 const RestaurantMenu = () => {
   const { id } = useParams();
-  const [restaurantMenu, setRestaurantMenu] = useState({});
+  const [restaurantMenu, setRestaurantMenu] = useState(null);
   const MENU_API = restaurantMenu?.data?.cards[0]?.card?.card?.info;
 
   useEffect(() => {
     const menuCard = async () => {
       const data = await fetch(
-        `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9715987&lng=77.5945627&restaurantId=639122&submitAction=ENTER`
+        `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9715987&lng=77.5945627&restaurantId=${id}&submitAction=ENTER`
       );
       const json = await data.json();
       setRestaurantMenu(json);
@@ -24,7 +25,9 @@ const RestaurantMenu = () => {
     menuCard();
   }, []);
 
-  return (
+  return !restaurantMenu?.data?.cards[0]?.card?.card?.info?.name ? (
+    <ShimmerDetail />
+  ) : (
     <>
       <div className="restaurant-container">
         <section className="restaurant-description">
@@ -65,7 +68,7 @@ const RestaurantMenu = () => {
           </span>
         </label>
       </div>
-      <Category />
+      <Category id={id} />
     </>
   );
 };

@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
 import "./Category.css";
 import { BsCurrencyRupee } from "react-icons/bs";
+import ShimmerDetail from "../ShimmerDetail";
 
-const API_MENU_ITEM =
-  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9715987&lng=77.5945627&restaurantId=639122&submitAction=ENTER";
+const Category = ({ id }) => {
+  const API_MENU_ITEM = `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9715987&lng=77.5945627&restaurantId=${id}&submitAction=ENTER`;
 
-const Category = () => {
   const [menu, setMenu] = useState({});
+
   const menuCard =
     menu?.data?.cards[2].groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
       ?.card;
+
   useEffect(() => {
     const getMenu = async () => {
       const item = await fetch(API_MENU_ITEM);
@@ -17,12 +19,11 @@ const Category = () => {
       setMenu(json);
     };
     getMenu();
-    console.log(
-      menu?.data?.cards[2].groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
-        ?.card?.itemCards
-    );
   }, []);
-  return (
+
+  return !menuCard ? (
+    <ShimmerDetail />
+  ) : (
     <>
       <div className="menu-item">
         <h3>

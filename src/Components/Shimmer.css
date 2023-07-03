@@ -1,0 +1,11 @@
+.Shimmer {
+  width: 260px;
+  height: 200px;
+  background-color: #f3f3f3;
+  margin: 20px;
+}
+
+.shimmer-effect {
+  display: flex;
+  flex-wrap: wrap;
+}

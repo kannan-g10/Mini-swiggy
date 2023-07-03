@@ -1,10 +1,9 @@
-const About = () => {
-  return (
-    <div style={{ textAlign: "center" }}>
-      <h1>About Us Page</h1>
-      <p>This is Mini Food serving app</p>
-    </div>
-  );
-};
+import { Component } from "react";
+
+class About extends Component {
+  render() {
+    return <h1>About</h1>;
+  }
+}
 
 export default About;
